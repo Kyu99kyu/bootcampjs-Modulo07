@@ -1,6 +1,6 @@
 import "./style.css";
 import {partida } from "./modelo";
-import { generarCarta, generarValorCarta, obtenerMensajeSegunPuntos } from "./motor"
+import { generarCarta, generarNumeroAleatorio, generarValorCarta, obtenerMensajeSegunPuntos } from "./motor"
 export{iniciarPartida}
 
 const divPuntuacion = document.getElementById("puntuacion");
@@ -70,7 +70,7 @@ const eventos = (): void => {
   };
 
   const dameCarta = (): void => {
-    partida.carta = generarCarta();
+    partida.carta = generarCarta(generarNumeroAleatorio());
     partida.puntos += generarValorCarta(partida.carta);
     mostrarCarta(partida.carta);
   };
